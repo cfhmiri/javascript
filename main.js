@@ -127,4 +127,25 @@ function es4() {
 
 
 
+        let btnTris = document.querySelectorAll('.tris');
+        let player = null;
+
+        function play(event) {
+            if (!player) {
+                player = 'X';
+            } else if (player == 'X') {
+                player = 'O';
+            } else if (player == 'O') {
+                player = 'X';
+            }
+
+            event.target.innerHTML = player;
+        }
+
+        for (let i = 0; i < btnTris.length; i++){
+            btnTris[i].addEventListener('click', function(event) {play(event) });
+        }
+
+
+        
         
